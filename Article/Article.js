@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Future coders',
+    date: 'Feb 12th, 2020',
+    firstParagraph: `Welcome`,
+
+    secondParagraph: `To The`,
+
+    thirdParagraph: `THREE COMMA CLUB!`
   }
 ];
 
@@ -139,6 +148,14 @@ function createPanel(data){
   secondParagraph.textContent = data.secondParagraph;
   thirdParagraph.textContent = data.thirdParagraph;
   
+  expandButton.textContent = 'Expand';
+  
+  expandButton.addEventListener('click', event => {
+    console.log('in event listeners');
+    article.classList.toggle('article-open');
+    
+  });
+  
   return article;
 }
 
@@ -146,3 +163,4 @@ const articles = document.querySelector('.articles');
 data.map(data => {
   articles.appendChild(createPanel(data));
 });
+
